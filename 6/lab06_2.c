@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 			symtab = (Elf64_Shdr)sheader;
 		if (i == 5)
 			strtab = (Elf64_Shdr)sheader;
+
 	}
 
 	for (i = 0; i < symtab.sh_size / symtab.sh_entsize; i++)

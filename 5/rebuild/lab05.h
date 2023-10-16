@@ -1,6 +1,4 @@
 #pragma once
-//#ifndef LAB05_H
-//#define LAB05_H
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -20,5 +18,3 @@ void searchRecord();
 void viewAllRecords();
 void exportDatabaseToFile();
 void importDatabaseFromFile();
-
-//#endif LAB05_H

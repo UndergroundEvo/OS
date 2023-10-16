@@ -1,31 +1,29 @@
 #include "lab05.h"
 
-
-
-// Функция для редактирования записи в базе данных
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ Р·Р°РїРёСЃРё РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С…
 void editRecord() {
     int index;
-    printf("Введите номер записи для редактирования (0-%d): ", databaseSize - 1);
+    printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РїРёСЃРё РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ (0-%d): ", databaseSize - 1);
     scanf("%d", &index);
 
     if (index >= 0 && index < databaseSize) {
         struct Person* person = &database[index];
-        printf("Текущая запись:\n");
-        printf("Имя: %s\n", person->name);
-        printf("Возраст: %d\n", person->age);
-        printf("Адрес: %s\n", person->address);
+        printf("РўРµРєСѓС‰Р°СЏ Р·Р°РїРёСЃСЊ:\n");
+        printf("РРјСЏ: %s\n", person->name);
+        printf("Р’РѕР·СЂР°СЃС‚: %d\n", person->age);
+        printf("РђРґСЂРµСЃ: %s\n", person->address);
 
-        printf("Введите новые данные:\n");
-        printf("Имя: ");
+        printf("Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ:\n");
+        printf("РРјСЏ: ");
         scanf("%s", person->name);
-        printf("Возраст: ");
+        printf("Р’РѕР·СЂР°СЃС‚: ");
         scanf("%d", &person->age);
-        printf("Адрес: ");
+        printf("РђРґСЂРµСЃ: ");
         scanf("%s", person->address);
 
-        printf("Запись успешно отредактирована.\n");
+        printf("Р—Р°РїРёСЃСЊ СѓСЃРїРµС€РЅРѕ РѕС‚СЂРµРґР°РєС‚РёСЂРѕРІР°РЅР°.\n");
     }
     else {
-        printf("Неправильный номер записи.\n");
+        printf("РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РЅРѕРјРµСЂ Р·Р°РїРёСЃРё.\n");
     }
 }

@@ -1,10 +1,10 @@
 #include "lab05.h"
 
-// Функция для импорта базы данных из файла
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РёРјРїРѕСЂС‚Р° Р±Р°Р·С‹ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°
 void importDatabaseFromFile() {
     FILE* file = fopen("database.txt", "r");
     if (file == NULL) {
-        printf("Файл 'database.txt' не найден.\n");
+        printf("Р¤Р°Р№Р» 'database.txt' РЅРµ РЅР°Р№РґРµРЅ.\n");
         return;
     }
 
@@ -14,5 +14,5 @@ void importDatabaseFromFile() {
     }
 
     fclose(file);
-    printf("База данных успешно импортирована из файла 'database.txt'.\n");
+    printf("Р‘Р°Р·Р° РґР°РЅРЅС‹С… СѓСЃРїРµС€РЅРѕ РёРјРїРѕСЂС‚РёСЂРѕРІР°РЅР° РёР· С„Р°Р№Р»Р° 'database.txt'.\n");
 }

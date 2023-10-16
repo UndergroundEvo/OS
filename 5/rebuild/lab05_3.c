@@ -1,24 +1,24 @@
 #include "lab05.h"
 
-// Функция для поиска записи в базе данных
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРѕРёСЃРєР° Р·Р°РїРёСЃРё РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С…
 void searchRecord() {
     char searchName[50];
-    printf("Введите имя для поиска: ");
+    printf("Р’РІРµРґРёС‚Рµ РёРјСЏ РґР»СЏ РїРѕРёСЃРєР°: ");
     scanf("%s", searchName);
 
     int found = 0;
     for (int i = 0; i < databaseSize; i++) {
         if (strcmp(database[i].name, searchName) == 0) {
-            printf("Найдена запись:\n");
-            printf("Имя: %s\n", database[i].name);
-            printf("Возраст: %d\n", database[i].age);
-            printf("Адрес: %s\n", database[i].address);
+            printf("РќР°Р№РґРµРЅР° Р·Р°РїРёСЃСЊ:\n");
+            printf("РРјСЏ: %s\n", database[i].name);
+            printf("Р’РѕР·СЂР°СЃС‚: %d\n", database[i].age);
+            printf("РђРґСЂРµСЃ: %s\n", database[i].address);
             found = 1;
             break;
         }
     }
 
     if (!found) {
-        printf("Запись с именем \"%s\" не найдена в базе данных.\n", searchName);
+        printf("Р—Р°РїРёСЃСЊ СЃ РёРјРµРЅРµРј \"%s\" РЅРµ РЅР°Р№РґРµРЅР° РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С….\n", searchName);
     }
 }

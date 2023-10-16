@@ -8,8 +8,6 @@ struct Person {
     char address[100];
 };
 
-
- /*------сокращение кода функции------*/
 // Глобальная база данных, ограниченная 100 записями
 struct Person database[100];
 int databaseSize = 0;
