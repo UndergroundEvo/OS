@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 		fread(&sym, sizeof(Elf64_Sym), 1, file);
 		fseek(file, strtab.sh_offset + sym.st_name, SEEK_SET);
 		fread(sname, 1, 32, file);
-		fprintf(stdout, "%d\t%lld\t%u\t%u\t%hd\t%s\n", i,
+		fprintf(stdout, "%d\t%ld\t%u\t%u\t%hd\t%s\n", i,
 						sym.st_size,
 						ELF64_ST_TYPE(sym.st_info),
 						ELF64_ST_BIND(sym.st_info),

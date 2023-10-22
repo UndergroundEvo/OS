@@ -10,20 +10,20 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Инициализируем библиотеку libelf
+    // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј Р±РёР±Р»РёРѕС‚РµРєСѓ libelf
     if (elf_version(EV_CURRENT) == EV_NONE) {
         fprintf(stderr, "libelf initialization failed: %s\n", elf_errmsg(-1));
         return 1;
     }
 
-    // Открываем ELF-файл
+    // РћС‚РєСЂС‹РІР°РµРј ELF-С„Р°Р№Р»
     int fd = open(argv[1], O_RDONLY, 0);
     if (fd < 0) {
         perror("open");
         return 1;
     }
 
-    // Инициализируем структуру ELF
+    // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј СЃС‚СЂСѓРєС‚СѓСЂСѓ ELF
     Elf* elf = elf_begin(fd, ELF_C_READ, NULL);
     if (!elf) {
         fprintf(stderr, "elf_begin() failed: %s\n", elf_errmsg(-1));
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Получаем секцию .dynsym
+    // РџРѕР»СѓС‡Р°РµРј СЃРµРєС†РёСЋ .dynsym
     Elf_Scn* scn = NULL;
     GElf_Shdr shdr;
     while ((scn = elf_nextscn(elf, scn)) != NULL) {
@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Получаем секцию .strtab для имен символов
+    // РџРѕР»СѓС‡Р°РµРј СЃРµРєС†РёСЋ .strtab РґР»СЏ РёРјРµРЅ СЃРёРјРІРѕР»РѕРІ
     scn = NULL;
     while ((scn = elf_nextscn(elf, scn)) != NULL) {
         gelf_getshdr(scn, &shdr);
@@ -80,7 +80,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Извлекаем имена экспортируемых функций
+    // РР·РІР»РµРєР°РµРј РёРјРµРЅР° СЌРєСЃРїРѕСЂС‚РёСЂСѓРµРјС‹С… С„СѓРЅРєС†РёР№
     GElf_Sym sym;
     size_t num_syms = shdr.sh_size / shdr.sh_entsize;
     for (size_t i = 0; i < num_syms; i++) {
@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    // Освобождаем ресурсы
+    // РћСЃРІРѕР±РѕР¶РґР°РµРј СЂРµСЃСѓСЂСЃС‹
     elf_end(elf);
     pclose(fd);
 
