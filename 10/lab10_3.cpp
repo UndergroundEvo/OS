@@ -40,9 +40,10 @@ void calculatePi(int id, int num_threads) {
 }
 
 int main() {
-    //int num_threads = thread::hardware_concurrency();
+    int num_threads = thread::hardware_concurrency();
+    //int num_threads = 1;
     cout << "num_threads = " << num_threads << endl;
-    int num_threads = 1;
+
     thread threads[num_threads];
 
     // Создание потоков для вычислений
