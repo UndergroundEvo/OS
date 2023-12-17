@@ -1,0 +1,10 @@
+[Unit]
+Description=course_systemV
+
+[Service]
+ExecStart=/home/miron/course_systemV
+User=root
+Group=root
+
+[Install]
+WantedBy=default.target
