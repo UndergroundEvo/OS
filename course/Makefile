@@ -20,8 +20,12 @@ stop:
 .PHONY: clean
 clean:
 	rm course
-	rm service/course_systemV
 	rm log.txt
+
+.PHONY: cl_s
+cl_s:
+	rm service/course_systemV
+	rm /home/miron/course_systemV
 
 .PHONY: zabul
 zabul:

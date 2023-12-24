@@ -245,14 +245,7 @@ void DaemonMode(){
 }
 
 int main(int argc, char **argv) {
-    //pid_t parpid;
-//    if ((parpid = fork()) < 0) {
-//        //printf("\nНеудалось создать дочерний процесс");
-//        exit(1);
-//    } else if (parpid != 0) exit(0);
 
-    //fprintf(stdout, "Для выключения демона напишите sudo kill %d\n", (int) getpid());
-    //setsid(); //перевод нашего дочернего процесса в новую сесию
     logfile = fopen("log.txt", "w");
     DaemonMode();
 
